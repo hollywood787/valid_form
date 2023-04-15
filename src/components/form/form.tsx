@@ -1,6 +1,7 @@
 import { FullName } from './full-name/full-name';
 import { DataBirth } from './data-birth/data-birth';
 import { Telephone } from './telephone/telephone';
+import { MultiSelect } from './multiselector/multiselector';
 import { Gender } from './gender/gender';
 import { useState } from 'react';
 
@@ -8,9 +9,11 @@ function Form() {
   const [validateName, setValidateName] = useState(true);
   const [validateData, setValidateData] = useState(true);
   const [validateTelephone, setValidateTelephone] = useState(true);
+  const [validateMultiSelect, setValidateMultiSelect] = useState(true);
   const [blurName, setBlurNAme] = useState(false);
   const [blurData, setBlurData] = useState(false);
   const [blurTelephone, setBlurTelephone] = useState(false);
+  const [blurMultiSelect, setBlurMultiSelect] = useState(false);
 
   function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -24,6 +27,10 @@ function Form() {
 
     if (!blurTelephone) {
       setValidateTelephone(false);
+    }
+
+    if (!blurMultiSelect) {
+      setValidateMultiSelect(false);
     }
   }
 
@@ -45,6 +52,11 @@ function Form() {
         setBlurTelephone={setBlurTelephone}
       />
       <Gender />
+      <MultiSelect
+        validateMultiSelect={validateMultiSelect}
+        setValidateMultiSelect={setValidateMultiSelect}
+        setBlurMultiSelect={setBlurMultiSelect}
+      />
       <button type='submit'>Отправить</button>
     </form>
   );

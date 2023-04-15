@@ -12,7 +12,7 @@ interface ITelephoneProps {
 function Telephone({ validateTelephone, setValidateTelephone, setBlurTelephone }: ITelephoneProps) {
   const [error, setError] = useState('');
 
-  function handleTelephone(e: React.ChangeEvent<HTMLInputElement>) {
+  function handlerTelephone(e: React.ChangeEvent<HTMLInputElement>) {
     const number = e.target.value.replace(/[^0-9]/gim, '');
 
     if (number.length === 11) {
@@ -28,7 +28,7 @@ function Telephone({ validateTelephone, setValidateTelephone, setBlurTelephone }
     <>
       <InputMask
         onBlur={() => setBlurTelephone(true)}
-        onChange={handleTelephone}
+        onChange={handlerTelephone}
         mask='+7(999)-999-99-99'
         className={cn({
           [styles.invalid]: validateTelephone === false,

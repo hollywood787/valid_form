@@ -1,16 +1,24 @@
 import axios from 'axios';
 import { useEffect, useState } from 'react';
 import { url, token } from '~/core/constants';
+import cn from 'classnames';
 import styles from './full-name.module.css';
 
 interface INames {
   value: string;
 }
 
-function FullName() {
+interface INameProps {
+  setValidateName: (isValid: boolean) => void;
+  validateName: boolean;
+  setBlurNAme: (isValid: boolean) => void;
+}
+
+function FullName({ setValidateName, validateName, setBlurNAme }: INameProps) {
   const [value, setValue] = useState('');
   const [names, setNames] = useState([]);
   const [isOpen, setIsOpen] = useState(true);
+  const [error, setError] = useState('');
 
   useEffect(() => {
     axios
@@ -35,8 +43,10 @@ function FullName() {
   }, [value]);
 
   function itemHandler(e: React.MouseEvent<HTMLLIElement>) {
-    if (typeof e.currentTarget.textContent === 'string') {
-      setValue(e.currentTarget.textContent);
+    const content = e.currentTarget.textContent;
+    if (typeof content === 'string') {
+      setValue(content);
+      validateNameForm(content);
     }
     setIsOpen(!isOpen);
   }
@@ -45,14 +55,35 @@ function FullName() {
     setIsOpen(true);
   }
 
+  function inputHandler(e: React.ChangeEvent<HTMLInputElement>) {
+    const content = e.target.value;
+    setValue(content);
+    validateNameForm(content);
+  }
+
+  function validateNameForm(name: String) {
+    if (name.length > 1 && name.length < 240) {
+      setValidateName(true);
+      setError('');
+    } else {
+      setValidateName(false);
+      setError('Введите корректный ФИО');
+    }
+  }
+
   return (
     <div className={styles.autocomplete_form}>
       <input
         type='text'
         placeholder='ФИО'
         value={value}
-        onChange={(e) => setValue(e.target.value)}
+        onChange={inputHandler}
+        onBlur={() => setBlurNAme(true)}
         onClick={itemClickHandler}
+        className={cn({
+          [styles.invalid]: validateName === false,
+          [styles.valid]: validateName === true,
+        })}
       />
       <ul className={styles.autocomplete}>
         {value && isOpen
@@ -68,6 +99,7 @@ function FullName() {
             ))
           : null}
       </ul>
+      {error}
     </div>
   );
 }

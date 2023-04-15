@@ -3,6 +3,7 @@ import { DataBirth } from './data-birth/data-birth';
 import { Telephone } from './telephone/telephone';
 import { MultiSelect } from './multiselector/multiselector';
 import { Gender } from './gender/gender';
+import { Selector } from './selector/selector';
 import { useState } from 'react';
 
 function Form() {
@@ -57,6 +58,7 @@ function Form() {
         setValidateMultiSelect={setValidateMultiSelect}
         setBlurMultiSelect={setBlurMultiSelect}
       />
+      <Selector />
       <button type='submit'>Отправить</button>
     </form>
   );

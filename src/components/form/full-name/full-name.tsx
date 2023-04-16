@@ -62,7 +62,7 @@ function FullName({ setValidateName, validateName, setBlurNAme }: INameProps) {
     validateNameForm(content);
   }
 
-  function validateNameForm(name: String) {
+  function validateNameForm(name: string) {
     if (name.length > 1 && name.length < 240) {
       setValidateName(true);
       setError(defaultValue);

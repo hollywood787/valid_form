@@ -1,6 +1,7 @@
 import cn from 'classnames';
 import styles from './telephome.module.css';
 import InputMask from 'react-input-mask';
+import { IMaskInput } from 'react-imask';
 import { useState } from 'react';
 
 interface ITelephoneProps {
@@ -29,10 +30,10 @@ function Telephone({ validateTelephone, setValidateTelephone, setBlurTelephone }
       <label htmlFor='telephone'>
         Номер телефона<span>*</span>
       </label>
-      <InputMask
+      <IMaskInput
         onBlur={() => setBlurTelephone(true)}
         onChange={handlerTelephone}
-        mask='+7(999)-999-99-99'
+        mask='+{7}(000)000-00-00'
         id='telephone'
         className={cn({
           invalid: validateTelephone === false,

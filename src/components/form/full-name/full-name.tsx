@@ -1,6 +1,6 @@
 import axios from 'axios';
 import { useEffect, useState } from 'react';
-import { url, token } from '~/core/constants';
+import { url, token, defaultValue } from '~/core/constants';
 import { nanoid } from 'nanoid';
 import cn from 'classnames';
 import styles from './full-name.module.css';
@@ -16,10 +16,10 @@ interface INameProps {
 }
 
 function FullName({ setValidateName, validateName, setBlurNAme }: INameProps) {
-  const [value, setValue] = useState('');
+  const [value, setValue] = useState(defaultValue);
   const [names, setNames] = useState([]);
   const [isOpen, setIsOpen] = useState(true);
-  const [error, setError] = useState('');
+  const [error, setError] = useState(defaultValue);
 
   useEffect(() => {
     axios
@@ -65,7 +65,7 @@ function FullName({ setValidateName, validateName, setBlurNAme }: INameProps) {
   function validateNameForm(name: String) {
     if (name.length > 1 && name.length < 240) {
       setValidateName(true);
-      setError('');
+      setError(defaultValue);
     } else {
       setValidateName(false);
       setError('Введите корректный ФИО');

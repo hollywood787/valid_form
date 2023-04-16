@@ -1,8 +1,7 @@
 import cn from 'classnames';
-import styles from './telephome.module.css';
-import InputMask from 'react-input-mask';
 import { IMaskInput } from 'react-imask';
 import { useState } from 'react';
+import { defaultValue } from '~/core/constants';
 
 interface ITelephoneProps {
   setValidateTelephone: (isValid: boolean) => void;
@@ -11,14 +10,14 @@ interface ITelephoneProps {
 }
 
 function Telephone({ validateTelephone, setValidateTelephone, setBlurTelephone }: ITelephoneProps) {
-  const [error, setError] = useState('');
+  const [error, setError] = useState(defaultValue);
 
   function handlerTelephone(e: React.ChangeEvent<HTMLInputElement>) {
-    const number = e.target.value.replace(/[^0-9]/gim, '');
+    const number = e.target.value.replace(/[^0-9]/gim, defaultValue);
 
     if (number.length === 11) {
       setValidateTelephone(true);
-      setError('');
+      setError(defaultValue);
     } else {
       setValidateTelephone(false);
       setError('Введите корректный телефон');

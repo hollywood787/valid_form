@@ -1,5 +1,5 @@
 import cn from 'classnames';
-import styles from './data-birtx.module.css';
+import { defaultValue } from '~/core/constants';
 
 interface IDataProps {
   setValidateData: (isValid: boolean) => void;
@@ -9,7 +9,7 @@ interface IDataProps {
 
 function DataBirth({ setValidateData, validateData, setBlurData }: IDataProps) {
   function handlerData(e: React.ChangeEvent<HTMLInputElement>) {
-    if (e.target.value === '') {
+    if (e.target.value === defaultValue) {
       setValidateData(false);
       setBlurData(false);
     } else {

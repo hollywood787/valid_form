@@ -5,6 +5,7 @@
   --primary-hover: #DEEBFF;
   --red: #FC836D;
   --gray-light: #EBEBEB;
+  --input-hover: #b3b3b3;
 }
 
 * {
@@ -71,6 +72,14 @@ input {
   border: 1px solid var(--gray-light);
 }
 
+input:hover {
+  border-color: var(--input-hover);
+}
+
+input:focus {
+  border-color: var(--primary);
+}
+
 button {
   background: var(--primary);
   border-radius: 4px;
@@ -117,6 +126,7 @@ label span {
 
 .multiSelectContainer ul {
   padding: 4px 0;
+  margin-top: 4px;
 }
 
 .invalid {

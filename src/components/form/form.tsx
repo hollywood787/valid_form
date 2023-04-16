@@ -6,6 +6,7 @@ import { Gender } from './gender/gender';
 import { Selector } from './selector/selector';
 import { CheckBox } from './checkbox/checkbox';
 import { useState } from 'react';
+import styles from './form.module.css';
 
 function Form() {
   const [validateName, setValidateName] = useState(true);
@@ -37,7 +38,7 @@ function Form() {
   }
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} className={styles.form_block}>
       <FullName
         setValidateName={setValidateName}
         validateName={validateName}
@@ -60,7 +61,7 @@ function Form() {
         setBlurMultiSelect={setBlurMultiSelect}
       />
       <Selector />
-      <CheckBox text={'Не отправлять смс'} />
+      <CheckBox text={'Не отправлять СМС'} />
       <button type='submit'>Отправить</button>
     </form>
   );

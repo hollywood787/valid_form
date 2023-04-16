@@ -1,11 +1,10 @@
 .autocomplete_form {
-
+    position: relative;
 }
 
 .autocomplete {
     position: absolute;
     left: 0;
-    top: 50px;
     width: 100%;
     background: var(--white);
     list-style: none;
@@ -24,15 +23,11 @@
 }
 
 .autocomplete_item:hover {
-    background: var(--gray-light);
+    background: var(--primary-hover);
     cursor: pointer;
     transition: all 0.2s ease-in-out;
 }
-
+ 
 .invalid {
-    border: 1px solid red;
-}
-
-.valid {
-    border: 1px solid green;
+    border: 1px solid var(--red);
 }

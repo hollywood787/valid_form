@@ -103,7 +103,7 @@ function FullName({ setValidateName, validateName, setBlurNAme }: INameProps) {
             ))
           : null}
       </ul>
-      {error}
+      <div className='error'>{error}</div>
     </div>
   );
 }

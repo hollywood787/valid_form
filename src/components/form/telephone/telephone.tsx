@@ -39,7 +39,7 @@ function Telephone({ validateTelephone, setValidateTelephone, setBlurTelephone }
           valid: validateTelephone === true,
         })}
       />
-      {error}
+      <div className='error'>{error}</div>
     </div>
   );
 }

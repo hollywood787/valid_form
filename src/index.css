@@ -132,3 +132,7 @@ label span {
 .invalid {
   border: 1px solid var(--red)
 }
+
+.error {
+  color: var(--red);
+}

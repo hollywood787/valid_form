@@ -4,6 +4,7 @@ import { Telephone } from './telephone/telephone';
 import { MultiSelect } from './multiselector/multiselector';
 import { Gender } from './gender/gender';
 import { Selector } from './selector/selector';
+import { CheckBox } from './checkbox/checkbox';
 import { useState } from 'react';
 
 function Form() {
@@ -59,6 +60,7 @@ function Form() {
         setBlurMultiSelect={setBlurMultiSelect}
       />
       <Selector />
+      <CheckBox text={'Не отправлять смс'} />
       <button type='submit'>Отправить</button>
     </form>
   );

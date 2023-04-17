@@ -48,8 +48,6 @@ function Form() {
       blurTelephone &&
       blurMultiSelect
     ) {
-      console.log(openModal);
-
       setOpenModal(true);
     }
   }

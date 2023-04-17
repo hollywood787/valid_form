@@ -2,7 +2,7 @@ import { useState } from 'react';
 import styles from './checkbox.module.css';
 
 interface IText {
-  text: String;
+  text: string;
 }
 
 function CheckBox({ text }: IText) {

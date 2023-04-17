@@ -7,3 +7,8 @@ export const customerGroup = {
     ],
 };
 
+export const options = [
+    { value: 'Петров', label: 'Петров' },
+    { value: 'Захаров', label: 'Захаров' },
+    { value: 'Черниговская', label: 'Черниговская' },
+];

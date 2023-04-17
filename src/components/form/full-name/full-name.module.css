@@ -28,3 +28,11 @@
     cursor: pointer;
     transition: all 0.2s ease-in-out;
 }
+
+.invalid {
+    border: 1px solid red;
+}
+
+.valid {
+    border: 1px solid green;
+}

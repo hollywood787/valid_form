@@ -25,18 +25,22 @@ function Telephone({ validateTelephone, setValidateTelephone, setBlurTelephone }
   }
 
   return (
-    <>
+    <div>
+      <label htmlFor='telephone'>
+        Номер телефона<span>*</span>
+      </label>
       <InputMask
         onBlur={() => setBlurTelephone(true)}
         onChange={handlerTelephone}
         mask='+7(999)-999-99-99'
+        id='telephone'
         className={cn({
-          [styles.invalid]: validateTelephone === false,
-          [styles.valid]: validateTelephone === true,
+          invalid: validateTelephone === false,
+          valid: validateTelephone === true,
         })}
       />
       {error}
-    </>
+    </div>
   );
 }
 

@@ -1,0 +1,10 @@
+.checkbox_block{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    align-items: flex-start;
+}
+
+.checkbox {
+    flex-basis: content;
+}

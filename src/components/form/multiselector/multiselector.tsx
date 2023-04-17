@@ -24,15 +24,20 @@ function MultiSelect({
 
   return (
     <div onBlur={() => setBlurMultiSelect(true)}>
+      <label htmlFor='multiselector'>
+        Группа клиентов<span>*</span>
+      </label>
       <Multiselect
         onRemove={handlerMulti}
         onSelect={handlerMulti}
         options={customerGroup.options}
         displayValue='name'
+        id='multiselector'
         className={cn({
-          [styles.invalid]: validateMultiSelect === false,
-          [styles.valid]: validateMultiSelect === true,
+          invalid: validateMultiSelect === false,
+          valid: validateMultiSelect === true,
         })}
+        placeholder=''
       />
     </div>
   );

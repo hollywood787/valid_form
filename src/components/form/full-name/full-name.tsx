@@ -73,16 +73,19 @@ function FullName({ setValidateName, validateName, setBlurNAme }: INameProps) {
 
   return (
     <div className={styles.autocomplete_form}>
+      <label htmlFor='names'>
+        ФИО<span>*</span>
+      </label>
       <input
+        id='names'
         type='text'
-        placeholder='ФИО'
         value={value}
         onChange={inputHandler}
         onBlur={() => setBlurNAme(true)}
         onClick={itemClickHandler}
         className={cn({
-          [styles.invalid]: validateName === false,
-          [styles.valid]: validateName === true,
+          invalid: validateName === false,
+          valid: validateName === true,
         })}
       />
       <ul className={styles.autocomplete}>

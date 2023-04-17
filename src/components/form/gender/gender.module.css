@@ -1,0 +1,15 @@
+.gender_block {
+    display: flex;
+    flex-direction: column;
+}
+
+.gender_block_genders {
+    display: flex;
+    gap: 3rem;
+}
+
+.gender_block_gender {
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+}

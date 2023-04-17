@@ -18,15 +18,21 @@ function DataBirth({ setValidateData, validateData, setBlurData }: IDataProps) {
   }
 
   return (
-    <input
-      type='date'
-      onChange={handlerData}
-      onBlur={() => setBlurData(true)}
-      className={cn({
-        [styles.invalid]: validateData === false,
-        [styles.valid]: validateData === true,
-      })}
-    />
+    <div>
+      <label htmlFor='databirth'>
+        Дата рождения<span>*</span>
+      </label>
+      <input
+        type='date'
+        id='databirth'
+        onChange={handlerData}
+        onBlur={() => setBlurData(true)}
+        className={cn({
+          invalid: validateData === false,
+          valid: validateData === true,
+        })}
+      />
+    </div>
   );
 }
 

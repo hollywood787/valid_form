@@ -5,7 +5,16 @@ import { options } from '~/core/mocks';
 function Selector() {
   const [selectedOption, setSelectedOption] = useState(null);
   return (
-    <Select options={options} defaultValue={selectedOption} onChange={() => setSelectedOption} />
+    <div>
+      <label htmlFor='doctor'>Лечащий врач</label>
+      <Select
+        id='doctor'
+        options={options}
+        defaultValue={selectedOption}
+        onChange={() => setSelectedOption}
+        placeholder=''
+      />
+    </div>
   );
 }
 

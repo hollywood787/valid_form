@@ -1515,6 +1515,11 @@
   "resolved" "https://registry.npmjs.org/ignore/-/ignore-5.2.0.tgz"
   "version" "5.2.0"
 
+"imask@^6.6.0-alpha.0":
+  "integrity" "sha512-p6ID0cMx0K2AouxMGsFLqdCfdFfn02IkSwe7SLPW2f9cwmbAojiktQ+SDi01S4ZdJ+eACa6IKRjjG2ZbJiXPmA=="
+  "resolved" "https://registry.npmjs.org/imask/-/imask-6.6.0-alpha.0.tgz"
+  "version" "6.6.0-alpha.0"
+
 "import-fresh@^3.0.0", "import-fresh@^3.2.1":
   "integrity" "sha512-veYYhQa+D1QBKznvhUHxb8faxlrwUnxseDAbAp457E0wLNio2bOSKnjYDhMj+YiAq61xrMGhQk9iXVk5FzgQMw=="
   "resolved" "https://registry.npmjs.org/import-fresh/-/import-fresh-3.3.0.tgz"
@@ -2054,6 +2059,14 @@
   dependencies:
     "loose-envify" "^1.1.0"
     "scheduler" "^0.22.0"
+
+"react-imask@^6.6.0-alpha.0":
+  "integrity" "sha512-4Bgs7jNzWp5L9YJqXQS/wQbIqQSAvikbWmgq3RqJxXhxPW++mTc8SROsb7/147zEzJLa9/IIUZ4/3D+pbQXkxw=="
+  "resolved" "https://registry.npmjs.org/react-imask/-/react-imask-6.6.0-alpha.0.tgz"
+  "version" "6.6.0-alpha.0"
+  dependencies:
+    "imask" "^6.6.0-alpha.0"
+    "prop-types" "^15.8.1"
 
 "react-input-mask@^2.0.4":
   "integrity" "sha512-1hwzMr/aO9tXfiroiVCx5EtKohKwLk/NT8QlJXHQ4N+yJJFyUuMT+zfTpLBwX/lK3PkuMlievIffncpMZ3HGRQ=="

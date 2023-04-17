@@ -1,6 +1,7 @@
 import axios from 'axios';
 import { useEffect, useState } from 'react';
 import { url, token } from '~/core/constants';
+import { nanoid } from 'nanoid';
 import cn from 'classnames';
 import styles from './full-name.module.css';
 
@@ -95,7 +96,7 @@ function FullName({ setValidateName, validateName, setBlurNAme }: INameProps) {
                 className={styles.autocomplete_item}
                 onClick={itemHandler}
                 role='presentation'
-                key={item.value}
+                key={nanoid()}
               >
                 {item.value}
               </li>

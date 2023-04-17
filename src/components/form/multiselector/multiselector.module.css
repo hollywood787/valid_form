@@ -1,0 +1,12 @@
+.multiselector_item {
+    position: relative;
+}
+
+.multiselector_item svg {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 8px;
+    fill: #cccccc;
+    pointer-events: none;
+}

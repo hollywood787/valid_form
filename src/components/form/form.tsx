@@ -5,6 +5,7 @@ import { MultiSelect } from './multiselector/multiselector';
 import { Gender } from './gender/gender';
 import { Selector } from './selector/selector';
 import { CheckBox } from './checkbox/checkbox';
+import { SuccessForm } from './success-form/success-form';
 import { useState } from 'react';
 import styles from './form.module.css';
 
@@ -17,6 +18,7 @@ function Form() {
   const [blurData, setBlurData] = useState(false);
   const [blurTelephone, setBlurTelephone] = useState(false);
   const [blurMultiSelect, setBlurMultiSelect] = useState(false);
+  const [openModal, setOpenModal] = useState(false);
 
   function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -34,6 +36,21 @@ function Form() {
 
     if (!blurMultiSelect) {
       setValidateMultiSelect(false);
+    }
+
+    if (
+      validateName &&
+      validateData &&
+      validateTelephone &&
+      validateMultiSelect &&
+      blurName &&
+      blurData &&
+      blurTelephone &&
+      blurMultiSelect
+    ) {
+      console.log(openModal);
+
+      setOpenModal(true);
     }
   }
 
@@ -63,6 +80,11 @@ function Form() {
       <Selector />
       <CheckBox text={'Не отправлять СМС'} />
       <button type='submit'>Отправить</button>
+      <SuccessForm
+        textContent={'Новый клиент успешно создан'}
+        openModal={openModal}
+        setOpenModal={setOpenModal}
+      />
     </form>
   );
 }

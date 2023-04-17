@@ -34,7 +34,7 @@ function Telephone({ validateTelephone, setValidateTelephone, setBlurTelephone }
           [styles.invalid]: validateTelephone === false,
           [styles.valid]: validateTelephone === true,
         })}
-      ></InputMask>
+      />
       {error}
     </>
   );

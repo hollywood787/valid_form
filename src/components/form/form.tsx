@@ -1,6 +1,7 @@
 import { FullName } from './full-name/full-name';
 import { DataBirth } from './data-birth/data-birth';
 import { Telephone } from './telephone/telephone';
+import { Gender } from './gender/gender';
 import { useState } from 'react';
 
 function Form() {
@@ -43,6 +44,7 @@ function Form() {
         setValidateTelephone={setValidateTelephone}
         setBlurTelephone={setBlurTelephone}
       />
+      <Gender />
       <button type='submit'>Отправить</button>
     </form>
   );

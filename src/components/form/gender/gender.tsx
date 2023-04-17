@@ -1,6 +1,3 @@
-import cn from 'classnames';
-import styles from './gender.module.css';
-
 function Gender() {
   return (
     <>
